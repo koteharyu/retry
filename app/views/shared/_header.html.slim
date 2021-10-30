@@ -1,0 +1,8 @@
+.navbar.navbar-light.bg-dark
+  .container-fluid
+    = link_to "RETRY", root_path, class: "navbar-brand mb-0 h1 text-white"
+
+    .navbar-nav
+      - if logged_in?
+        = link_to current_user.username, root_path
+        = button_to 'ログアウト', logout_path, class: 'nav-link text-white', method: :delete

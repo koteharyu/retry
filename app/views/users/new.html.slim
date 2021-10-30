@@ -1,0 +1,21 @@
+.card.my-5
+  .card-header.text-center
+    | SIGN UP
+  = form_with model: @user, class: 'card-body', local: true do |f|
+    .form-group
+      = f.label :email, class: 'bmb-label-floating'
+      = f.email_field :email, class: 'form-control'
+    .form-group
+      = f.label :username, class: 'bmb-label-floating'
+      = f.text_field :username, class: 'form-control'
+    .form-group.mb-2
+      = f.label :password, class: 'bmb-label-floating'
+      = f.password_field :password, class: 'form-control'
+    .form-group.mb-2
+      = f.label :password_confirmation, class: 'bmb-label-floating'
+      = f.password_field :password_confirmation, class: 'form-control'
+    = f.submit 'ログイン', class: 'btn btn-raised btn-primary'
+.card
+  .card-body
+    | アカウントをお持ちですか？
+    = link_to "ログイン", login_path
