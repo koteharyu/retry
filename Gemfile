@@ -28,6 +28,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 gem 'slim-rails'
 gem 'html2slim'
 gem 'sorcery'
+gem 'font-awesome-sass'
 
 
 group :development, :test do
