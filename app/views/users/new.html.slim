@@ -1,0 +1,11 @@
+= form_with model: @user, local: true do |f|
+  .form-control
+     = f.label :email
+     = f.email_field :email
+  .form-control
+    = f.label :password
+    = f.password_field :password
+  .form-control
+    = f.label :password_confirmation
+    = f.password_field :password_confirmation
+  = f.submit "sign up"
