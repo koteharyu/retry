@@ -1,0 +1,10 @@
+= form_with model: @post, local: true do |f|
+  .form-group
+    = f.label :body
+    = f.text_area :body, class: "form-control"
+  .form-group
+    = f.label :image
+    = f.file_field :image, class: "form-control"
+    - if @post.image.attached?
+      = image_tag @post.image, size: "100x100"
+  = f.submit
