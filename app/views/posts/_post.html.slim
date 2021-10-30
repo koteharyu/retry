@@ -1,0 +1,12 @@
+ul
+  li= post.id
+  li= post.body
+  - if post.image.attached?
+    li= post.image
+  - else
+    li not attached a file
+  li= post.user.username
+  li= link_to "edit", edit_post_path(post)
+  li= button_to "delete", post_path(post), method: :delete, class: "btn btn-danger"
+
+hr
