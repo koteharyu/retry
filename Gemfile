@@ -29,6 +29,7 @@ gem 'slim-rails'
 gem 'html2slim'
 gem 'sorcery'
 gem 'font-awesome-sass'
+gem 'kaminari', git: 'https://github.com/kaminari/kaminari'
 
 
 group :development, :test do

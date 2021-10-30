@@ -10,7 +10,8 @@
           = link_to edit_post_path(post) do
             = icon 'far', 'edit', class: 'fa-lg'
   .card-img-top
-    = image_tag post.image, size: "854x500"
+    - if post.image.attached?
+      = image_tag post.image, size: "854x500"
   .card-body
     .card-text
       = post.body

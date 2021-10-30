@@ -1,9 +1,10 @@
 class PostsController < ApplicationController
 
   skip_before_action :require_login, only: %i[index]
+  PER_PAGE = 15
 
   def index
-    @posts = Post.order(created_at: :desc)
+    @posts = Post.order(created_at: :desc).page(params[:page]).per(PER_PAGE)
   end
 
   def show
