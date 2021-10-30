@@ -9,15 +9,16 @@ class UserSessionsController < ApplicationController
   def create
     @user = login(params[:email], params[:password])
     if @user
-      redirect_back_or_to root_path
+      redirect_back_or_to root_path, success: "successfully login"
     else
+      flash.now[:danger] = "please retry"
       render :new
     end
   end
 
   def destroy
     logout
-    redirect_to login_path
+    redirect_to login_path, success: "bey bey"
   end
 
 end

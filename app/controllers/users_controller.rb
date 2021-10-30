@@ -10,8 +10,9 @@ class UsersController < ApplicationController
     @user = User.create(user_params)
     if @user.save
       auto_login(@user)
-      redirect_to root_path
+      redirect_to root_path, success: "create a user"
     else
+      flash.now[:danger] = "please retry..."
       render :new
     end
   end
